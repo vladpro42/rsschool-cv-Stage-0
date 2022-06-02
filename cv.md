@@ -8,9 +8,10 @@
 
 #### About myself:
 I want to learn Front-End Development __in RSSchool!__
+21 years old
 
 #### Skills and Proficiency:
-I don't have ye
+no programming skills
 
 #### Education and courses:
 This is my first course
