@@ -1,2 +1,10 @@
-/*  font-family: 'Kdam Thmor Pro', sans-serif;
-font-family: 'Roboto', sans-serif;   */
+
+*, 
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+}
