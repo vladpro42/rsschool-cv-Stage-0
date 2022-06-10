@@ -13,8 +13,11 @@ body{
     background: rgb(181,15,177);
     background: linear-gradient(90deg, rgba(181,15,177,0.6334908963585435) 2%, rgba(43,184,97,0.639093137254902) 50%, rgba(0,212,255,0.6334908963585435) 100%);
 }
-h1, h3, h4{
+h1, h2, h3, h4{
     font-family: 'Kdam Thmor Pro', sans-serif;
+}
+h2{
+    font-size: 1.17em;
 }
 .container{
     max-width: 1200px;
@@ -82,4 +85,23 @@ h1, h3, h4{
 }
 .english__content{
     margin-left: 10px;
+}
+.footer{
+    border-top  : 1px solid rgb(92, 2, 65);
+}
+.footer__inner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.link__github-img{
+    width: 135px;
+    height: 135px;
+}
+.footer__logo-img{
+    width: 150px;
+    height: 150px;
+}
+.footer__text{
+    font-weight: bold;
 }
