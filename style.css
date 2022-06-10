@@ -3,8 +3,83 @@
 *::before,
 *::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #131313;
+    background: rgb(181,15,177);
+    background: linear-gradient(90deg, rgba(181,15,177,0.6334908963585435) 2%, rgba(43,184,97,0.639093137254902) 50%, rgba(0,212,255,0.6334908963585435) 100%);
+}
+h1, h3, h4{
     font-family: 'Kdam Thmor Pro', sans-serif;
-    /*font-family: 'Roboto', sans-serif;*/
+}
+.container{
+    max-width: 1200px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+/* header */ 
+.header{
+    margin-top: 30px;
+}
+.header__inner{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.photo__img{
+    width: 200px;
+    height: 260px;
+    border: 2px solid gray;
+    border-radius: 10px 100px / 120px; 
+}
+.header__name{
+    margin-left: 15px;
+}
+.information{
+    margin: 30px 10px;
+}
+.information__inner> div {
+    margin-bottom: 35px;
+}
+/*Contact*/
+.contact__list{
+    list-style-type: none;
+}
+.list{
+    margin: 4px 0px 4px 10px;
+}
+.contact__link{
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    text-decoration: none;
+    color: #131313;
+
+}
+.contact__link:hover{
+    color: blueviolet;
+    border-bottom: 1px solid blueviolet;
+}
+.about-me__content{
+    margin-left: 10px;
+}
+.myskills__content{
+    margin-left: 10px;
+}
+.code__examples{
+    margin-left: 10px;
+}
+.work-experience__content{
+    margin-left: 10px;
+}
+.education__content{
+    margin-left: 10px;
+}
+.english__content{
+    margin-left: 10px;
 }
