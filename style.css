@@ -21,8 +21,8 @@ h2{
 }
 .container{
     max-width: 1200px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* header */ 
 .header{
@@ -104,4 +104,68 @@ h2{
 }
 .footer__text{
     font-weight: bold;
+}
+
+
+@media (max-width:826px) {
+    .header__inner{
+        margin-left: 76px;
+    }
+}
+@media (max-width:826px) {
+    .header__inner{
+        margin-left: 40px;
+    }
+}
+@media (max-width:540px){
+    .header__inner{
+        margin-left: 20px;
+    }
+    body{
+        font-size: 24px;
+    }
+    .link__github-img{
+        width: 100px;
+        height: 100px;
+    } 
+}
+@media (max-width:465px){
+    .header__inner{
+        margin-left: 7px;
+    }
+    body{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:420px){
+    .header__inner{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header__name{
+        margin-left: 0;
+        text-align: center;
+    }
+    .link__github-img{
+        width: 60px;
+        height: 60px;
+    }
+    .footer__logo-img{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width:367px){
+    .contact__social{
+        font-size: 18px;
+    }
+}
+@media (max-width:320px){
+    body{
+        font-size: 20px;
+    }
+    .contact__social{
+        font-size: 17px;
+    }
 }
