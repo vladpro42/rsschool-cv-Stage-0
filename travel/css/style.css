@@ -14,16 +14,23 @@ body{
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    background-image: url(../images/back-img-1.jpg);
+    min-height: calc(100vh - 90px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
 }
 a{
     text-decoration: none;
     color: inherit;
 }
-button{
-    color: inherit;
-}
 li{
     list-style-type: none;
+}
+h1, h2, h3, h4, p{
+    margin: 0;
+    padding: 0;
 }
 .container{
     max-width: 1220px;
@@ -33,6 +40,7 @@ li{
 .header{
     background: rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+    margin-bottom: 32px;
 }
 .header__inner{
     display: flex;
@@ -43,6 +51,8 @@ li{
     font-size: 16px;
     line-height: 21px;
     color: #fff;
+    text-align: center;
+    height: 90px;
 }
 .header__title>img{
     width: 216px;
@@ -58,6 +68,10 @@ li{
     background: #0D606F;
     box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
+    color: #fff;
+    padding: 14px 33px;
+    font-family: 'Red Hat Text';
+    border: none;
 }
 .login{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);   
@@ -65,5 +79,38 @@ li{
     font-size: 16px;
     line-height: 21px;
     padding: 10px 30px;
-    border: none;
+}
+.preview{
+    font-family: 'Aleo';
+    color: #fff;
+}
+.preview__title{
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 96px;
+    margin-bottom: 55px;
+}
+.preview__text{
+    font-style: italic;
+    margin-bottom: 46px;
+}
+.preview__box{
+    padding: 32px 0px 31px 41px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    max-width: 892px;
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    margin-bottom: 334px;
+}
+.preview__box-text{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #F2785C;
+}
+.preview__box-btn{
+    margin-right: 21px;
 }
