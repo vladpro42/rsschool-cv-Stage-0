@@ -26,6 +26,10 @@ h1, h2, h3, h4, p{
     margin: 0;
     padding: 0;
 }
+ul{
+    margin: 0;
+    padding: 0;
+}
 .background{
     background-image: url(../images/back-img-1.jpg);
     min-height: calc(100vh - 90px);
@@ -33,7 +37,7 @@ h1, h2, h3, h4, p{
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
-    height: 765px;
+    /* height: 765px; */
 }
 .container{
     max-width: 1220px;
@@ -172,18 +176,96 @@ h1, h2, h3, h4, p{
     left: 30px;
     top: 15px;
 }
+
 .stories__title{
     color: #F2785C;
     margin-bottom: 40px;
 }
-.stories{
+.stories__inner{
     background-image: url(../images/phon-2.jpg);
+    padding: 40px 0 0 120px;
+    /* min-height: 100vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+/* background--opacyti  stories__inner::before*/
+.stories__inner::before{
+    content: "";
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
 }
 .stories__box{
-    
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
 }
 .stories__list{
     display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
 }
-
+.stories__list + .stories__list{
+    margin-top: 30px;
+}
+.stories__content{
+    margin-left: 40px;
+}
+.content__title{
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+}
+.stories-box__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.stories__btn{
+    position: relative;
+    padding: 13px 31px 13px 81px;
+    text-align: center;
+    margin-bottom: 41px;
+}
+.stories__btn::before{
+    content: url(../images/strelaright.svg);
+    width: 36px;
+    height: 23px;
+    margin-right: 12px;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.footer{
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+}
+.footer__inner{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.footer__text{
+    margin-right: 328px;
+}
+.social__link{
+    display: flex;
+    align-items: center;
+}
+.social-list__link + .social-list__link{
+    margin-left: 20px;
+}
+    
 
