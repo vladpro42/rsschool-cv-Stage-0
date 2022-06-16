@@ -33,6 +33,7 @@ h1, h2, h3, h4, p{
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+    height: 765px;
 }
 .container{
     max-width: 1220px;
@@ -74,6 +75,9 @@ h1, h2, h3, h4, p{
     padding: 14px 33px;
     font-family: 'Red Hat Text';
     border: none;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
 }
 .login{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);   
@@ -118,6 +122,7 @@ h1, h2, h3, h4, p{
 .steps{
     color: #F2785C;
     margin-top: 80px;
+    margin-bottom: 97px;
 }
 .steps__title{
     margin-bottom: 40px;
@@ -140,3 +145,45 @@ h1, h2, h3, h4, p{
 .list__text{
     color: #0D606F;
 }
+.destinations{
+    margin-bottom: 84px;
+    text-align: center;
+}
+.destinations__title{
+    color: #F2785C;
+    margin-bottom: 46px;
+}
+.slider{
+    margin-bottom: 84px;
+}
+.destinations__btn{
+    padding: 13px 31px 13px 81px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.destinations__btn::before{
+    content: url(../images/strelaright.svg);
+    width: 36px;
+    height: 23px;
+    margin-right: 12px;
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+.stories__title{
+    color: #F2785C;
+    margin-bottom: 40px;
+}
+.stories{
+    background-image: url(../images/phon-2.jpg);
+}
+.stories__box{
+    
+}
+.stories__list{
+    display: flex;
+}
+
+
