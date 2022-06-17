@@ -14,6 +14,10 @@ body{
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/back-img-1.jpg);
+    background-repeat: no-repeat;
 }
 a{
     text-decoration: none;
@@ -29,15 +33,6 @@ h1, h2, h3, h4, p{
 ul{
     margin: 0;
     padding: 0;
-}
-.background{
-    background-image: url(../images/back-img-1.jpg);
-    min-height: calc(100vh - 90px);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
-    /* height: 765px; */
 }
 .container{
     max-width: 1220px;
@@ -112,6 +107,7 @@ ul{
     display: flex;
     justify-content: space-between;   
     align-items: center;
+    margin-bottom: 334px;
 }
 .preview__box-text{
     font-style: italic;
@@ -125,7 +121,6 @@ ul{
 }
 .steps{
     color: #F2785C;
-    margin-top: 80px;
     margin-bottom: 97px;
 }
 .steps__title{
@@ -150,7 +145,7 @@ ul{
     color: #0D606F;
 }
 .destinations{
-    margin-bottom: 84px;
+    margin-bottom: 80px;
     text-align: center;
 }
 .destinations__title{
@@ -165,7 +160,6 @@ ul{
     position: relative;
     display: inline-block;
     text-align: center;
-    margin-bottom: 80px;
 }
 .destinations__btn::before{
     content: url(../images/strelaright.svg);
@@ -176,25 +170,24 @@ ul{
     left: 30px;
     top: 15px;
 }
-
 .stories__title{
     color: #F2785C;
     margin-bottom: 40px;
 }
-.stories__inner{
-    background-image: url(../images/phon-2.jpg);
+ .stories__inner{
+    background: inherit;
     padding: 40px 0 0 120px;
-    /* min-height: 100vh; */
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-attachment:fixed;
     position: relative;
-    overflow: hidden;
-}
-/* background--opacyti  stories__inner::before*/
+} 
 .stories__inner::before{
+    display: block;
     content: "";
     background: rgba(255, 255, 255, 0.7);
+    width: auto;
+    height: auto;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -202,16 +195,27 @@ ul{
     left: 0px;
     z-index: 1;
 }
+ .stories__inner, .footer{
+    background-image: url(../images/phon-2.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+} 
 .stories__box{
     position: relative;
     z-index: 2;
     margin-bottom: 40px;
+    opacity: 1;
+    opacity: inherit;
 }
 .stories__list{
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: row;
+    opacity: 1;
+    position: relative;
+    z-index: 10;
 }
 .stories__list + .stories__list{
     margin-top: 30px;
