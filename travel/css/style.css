@@ -1,10 +1,12 @@
 html{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *,
 *::after,
 *::before{
     box-sizing: inherit;
+    scroll-behavior: inherit;
 }
 
 body{
@@ -61,6 +63,9 @@ ul{
 }
 .menu__list + .menu__list{
     margin-left: 42px;
+}
+.menu__link:active{
+    color: black;
 }
 .btn{
     background: #0D606F;
@@ -183,7 +188,7 @@ ul{
 }
  .stories__inner{
     background: inherit;
-    padding: 40px 0 0 120px;
+    padding: 40px 0 0 0;
     background-size: cover;
     background-position: center;
     background-attachment:fixed;
@@ -264,13 +269,9 @@ ul{
     left: 30px;
 }
 .footer__inner{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     padding: 14px 0;
 }
 .footer__text{
-    margin-right: 328px;
     color: #fff;
     font-family: 'Red Hat Text';
     font-style: normal;
@@ -281,14 +282,19 @@ ul{
 .social__link{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-.social-list__link + .social-list__link{
+.social__link + .social__link{
     margin-left: 20px;
 }
 .social__link-img{
     color: #fff;
     width: auto;
     height: 34px;
+}
+.social-list__link--flex{
+    display: flex;
+    align-items: center;
 }
     
 
