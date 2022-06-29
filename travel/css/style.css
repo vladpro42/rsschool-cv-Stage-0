@@ -296,5 +296,135 @@ ul{
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 390px){
+    .container{
+        max-width: 370px;
+        margin: auto;
+        padding: 0 5px;
+    }
+    .header {
+        background: none;
+        box-shadow: none
+    }
+    .header, .preview{
+        background-image: url(../images/mobile/back.png);
+        background-repeat: no-repeat;
+        height: 251px;
+    }
+    .header__inner{
+        padding-top: 43px;
+        height: 32px;
+    }
+    .header__title>img{
+        display: none;
+    }
+    .header__title{
+        content: url(../images/logologi.svg)
+    }
+    .nav{
+        content: url(../images/burger.svg);
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    .preview{
+        margin-top: 0;
+        background-size: auto;
+        z-index: 0;
+        height: 48px;
+    }
+    .preview__title{
+        display: none;
+    }
+    .preview__text{
+        display: none;
+    }
+    .preview__box{
+        margin: -109px 15px 0;
+        padding: 9px 9px 9px 16px;
+        max-width: 360px;
+    }
+    .btn{
+        padding: 7px 9px;
+        font-size: 11px;
+        line-height: 15px;
+    }
+    .preview__box-text{
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .preview__box-btn{
+        margin-right: 0;
+    }
+    .steps{
+        margin-top: 81px;
+        margin-bottom: 22px;
+    }
+    .steps__title{
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .title__h2{
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .steps__list+ .steps__list{
+        margin-left: 72px;
+    }
+    .steps__list:first-child{
+        text-align: left;
+    }
+    .steps__list:nth-child(2){
+        text-align: center;
+    }
+    .steps__list:last-child{
+        text-align: right;
+    }
+    .list__img{
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0;
+    }
+    .list__text{
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .list__text{
+        margin-top: 20px;
+    }
+    .destinations__title{
+        margin-bottom: 20px;
+    }
+    .slider{
+        margin-bottom: 10px;
+    }
+    .slider__item{
+        border-radius: 16px;
+    }
+    .slider__item:first-child{
+        content: url(../images/mobile/slider-1.jpg);
+    }
+    .slider__item:nth-child(2){
+        content: url(../images/mobile/slider-2.jpg);
+        display: none;
+    }
+    .slider__item:last-child{
+        content: url(../images/mobile/slider-3.jpg);
+        display: none;
+    }
+    .destinations__btn::before{
+        content: url(../images/mobile/Vector.svg);
+        width: 8px;
+        height: 5px;
+        margin-right: 7px;
+        position: initial;
+    }
+}
     
+
 
