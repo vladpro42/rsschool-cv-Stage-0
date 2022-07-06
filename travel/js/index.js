@@ -6,13 +6,17 @@ console.log('верстка валидная +10 \n верстка семант�
 const navigation = document.querySelector('.nav');
 const menu = document.querySelector('.menu');
 const link = document.getElementById('link__account');
+const nav__burger = document.querySelector('.nav__burger');
+const body = document.body;
 
 
 if(navigation){
     navigation.addEventListener("click", function(e){
         menu.classList.toggle('activ__menu');
-        navigation.classList.toggle('activ__nav');
+        //navigation.classList.toggle('activ__nav');
         link.classList.remove();
+        nav__burger.classList.toggle('nav__burger--activ');
+        body.classList.toggle("activ");
     });
 }
 
