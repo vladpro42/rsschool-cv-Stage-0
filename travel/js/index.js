@@ -1,28 +1,60 @@
 'use strict'
-console.log('верстка валидная +10 \n верстка семантичная:\n есть <header>, <main>, <footer> +3 \n четыре Секции +3 \n 1 заголовок h1 +3 \n три заголовка h2 +3 \n один nav +3 \n болше чем два списка не добавляем 3 балла \nчетыре кнопки +2\n Итого: 17\n Верстка соответсвует макету +48 \n Треования к CSS выполнены +12 \n Интерактивность +20 Итого: 110 баллов - 3 == 107 балов, макс 100 => Score = 100 баллов');
+console.log('При проверке адаптива Pixel Perfect рекомендую Наложить pixel на бургер иконку!\n На странице нет Кружочков в секции слайдер и срелок переключения изза ненадобности они появятся когда будет слайдер и их уже надо стилить. Я не считаю это за ошибку, но проверять вам')
+console.log('Вёрстка соответствует макету. Ширина экрана 390px +48 \n блок <header> +6 \n секция preview +9 \n секция steps +9\n секция destinations +9 \n секция stories +9\n блок <footer> +6\n \n Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15\n Нет полосы прокрутки при ширине страницы от 1440рх до 390px +7\n Нет полосы прокрутки при ширине страницы от 390px до 320рх +8\n \nНа ширине экрана 390рх и меньше реализовано адаптивное меню +22\n При ширине страницы 390рх панель навигации скрывается, появляется бургер-иконка +2\n При нажатии на бургер-иконку плавно появляется адаптивное меню +4\n Адаптивное меню соответствует макету +4 \n При нажатии на крестик адаптивное меню плавно скрывается уезжая за экран +4 \n Ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям +4 (все кроме Account, она пока что просто закрывает меню) \n При клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна +4\n');
+console.log('Итого 75 баллов')
 
 
 
-const navigation = document.querySelector('.nav');
 const menu = document.querySelector('.menu');
-const link = document.getElementById('link__account');
-const nav__burger = document.querySelector('.nav__burger');
+const navBurger = document.querySelector('.nav__burger');
 const body = document.body;
 
-
-if(navigation){
-    navigation.addEventListener("click", function(e){
+// Burger menu
+if(navBurger){
+   navBurger.addEventListener("click", function(e){
         menu.classList.toggle('activ__menu');
-        //navigation.classList.toggle('activ__nav');
-        link.classList.remove();
-        nav__burger.classList.toggle('nav__burger--activ');
+        navBurger.classList.toggle('nav__burger--activ');
         body.classList.toggle("activ");
     });
 }
 
-/* if(link){
-    link.addEventListener("click", function(i){
-        navigation.classList.toggle('activ__nav');
-        menu.classList.remove('activ__menu');
-    })
-} */
+// Scrool click at link
+
+ const menuLink = document.querySelectorAll('.menu__link[data-goto]'); 
+
+ if(menuLink.length > 0) {
+    menuLink.forEach(menuLink => {
+        menuLink.addEventListener("click", onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)){
+            const menuLinkGoto = document.querySelector(menuLink.dataset.goto);
+            const menuLinkGotoValue = menuLinkGoto.getBoundingClientRect().top + pageYOffset - document.querySelector(".header").offsetHeight;
+
+            if(navBurger.classList.contains('nav__burger--activ')) {
+                menu.classList.remove('activ__menu');
+               navBurger.classList.remove('nav__burger--activ');
+                body.classList.remove("activ");
+            }
+
+            window.scrollTo({
+                top: menuLinkGotoValue,
+                behavior: "smooth",
+            });
+            e.preventDefault();
+        }
+    }
+}
+
+// Закрытие бургер меню при клике вне
+const menuRoot = document.querySelector('.menu');
+document.addEventListener('mousedown', (i) => {
+   if (! menuRoot.contains(i.target)) {
+      menu.classList.remove('activ__menu');
+      navBurger.classList.remove('nav__burger--activ');
+      body.classList.remove("activ");
+   }
+})
+
