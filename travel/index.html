@@ -25,22 +25,22 @@
                     <div class="nav__burger"></div>
                     <ul class="menu">
                         <li class="menu__list">
-                            <a class="menu__link" href="#preview">How It Works</a>
+                            <a data-goto="#preview" class="menu__link" href="#preview">How It Works</a>
                         </li>
                         <li class="menu__list">
-                            <a class="menu__link" href="#steps">Plan Your Trip</a>
+                            <a data-goto="#steps" class="menu__link" href="#steps">Plan Your Trip</a>
                         </li>
                         <li class="menu__list">
-                            <a class="menu__link" href="#destinations">Destinations</a>
+                            <a data-goto="#destinations" class="menu__link" href="#destinations">Destinations</a>
                         </li>
                         <li class="menu__list">
-                            <a class="menu__link" href="#travel_stories">Travel Stories</a>
+                            <a data-goto="#travel_stories" class="menu__link" href="#travel_stories">Travel Stories</a>
                         </li>
                         <li class="menu__list">
-                            <a class="menu__link" id="link__account" >Account</a>
+                            <a data-goto="#link__account" class="menu__link" href="#" id="link__account" >Account</a>
                         </li>
                         <li class="menu__list">
-                            <a class="menu__link" href="#footer">Social Media</a>
+                            <a data-goto="#footer" class="menu__link" href="#footer">Social Media</a>
                         </li>
                     </ul>
                 </nav>
@@ -83,9 +83,15 @@
          <section class="destinations container" id="destinations">
             <h2 class="destinations__title title__h2" >POPULAR DESTINATIONS</h2>
             <div class="slider">
-                <img class="slider__item" src="images/slider-1.jpg" alt="slider__photo">
-                <img class="slider__item" src="images/slider-2.jpg" alt="slider__photo">
-                <img class="slider__item" src="images/slider-3.jpg" alt="slider__photo">
+                <div class="slider__item-box">
+                    <img class="slider__item" src="images/slider-1.jpg" alt="slider__photo">
+                </div>
+                <div class="slider__item-box slider__item-box1">
+                    <img class="slider__item" src="images/slider-2.jpg" alt="slider__photo">
+                </div>
+                <div class="slider__item-box">
+                    <img class="slider__item" src="images/slider-3.jpg" alt="slider__photo">
+                </div>
             </div>
             <button class="btn destinations__btn">Find More</button>
         </section> 
