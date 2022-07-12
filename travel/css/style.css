@@ -798,7 +798,7 @@ ul {
 
 @media (max-width: 390px) {
     html{
-        overflow-x: hidden;
+       /*  overflow-x: hidden; */
     }
 
     .container {
@@ -1196,76 +1196,33 @@ ul {
 
 }
 
-/*
- .nav__burger{
-        content:url(../images/burger.svg);
-        height: 32px;
-        width: 35px;
-        position: absolute;
-        top: 23px;
-        right: 0;
-        z-index: 5;
-        transition: 1s;
-    }
-
-    .nav__burger--activ{
-        position: fixed;
-        display: block;
-        content: url(../images/mobile/krest.svg);
-        width: 15px;
-        height: 15px;
-        right: 120px;
-        top: 0px;
-    }
-
-    .menu{
-        width: 165px;
-        height: 251px;
-        padding: 44px 15px 30px 44px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: end;
-        background: #F2785C;
-        box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
-        border-radius: 10px;
-        transform: translate(200px, 65px);
-        transition: 1s;
-    }
-
-    .activ__menu{
-        width: 165px;
-        height: 251px;
-        padding: 44px 15px 30px 44px;
-        transform: translate(15px, 65px);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: end;
-        background: #F2785C;
-        box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
-        border-radius: 10px;
-    }
-
-    .menu > .menu__list:nth-child(5){
-        display: block;
-    }
-
-    .menu > .menu__list:nth-child(6){
-        display: block;
-    }
-
-    .menu__link{
-        font-family: 'Red Hat Text', sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 21px;
-    }
-
-    .menu__list + .menu__list{
-        margin-top: 10px;
+@media (max-width: 381px){
+    
+    .steps__list + .steps__list {
         margin-left: 0;
     }
 
-    */
+    .steps__list{
+        column-gap: 7px;
+    }
+
+    .list__text{
+        text-align: center;
+    }
+
+    .list__text{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+
+    .content__text{
+        width: initial;
+    }
+}
+
+@media (max-width: 355px){
+
+    .social-list__link{
+        margin-left: 0;
+    }
+}
