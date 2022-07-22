@@ -31,6 +31,30 @@ if(boxInputBtn) {
     });
 }
 
+const register = document.querySelector('.registr');
+
+if(register) {
+    register.addEventListener("click", () => {
+        const popupWrapActiv = document.querySelector('.popup__wrap');
+        popupWrapActiv.classList.toggle('popup__wrap_activ');
+
+        const buttonArr = document.querySelectorAll('.sign__login');
+        buttonArr.forEach(item => {
+            item.style.display = "none";
+        });
+
+        document.querySelector('.box__or').style.display = 'none';
+        document.querySelector('.sign__sub-text').style.display = 'none';
+        document.querySelector('.line').style.marginTop = "26px";
+
+        document.querySelector('.login__title').textContent = "Create account";
+        document.querySelector('.text').textContent = "Already have an account?";
+        document.querySelector('.registr').textContent = "Log in";
+        boxInputBtn.textContent = "Sign Up";
+        
+    });
+}
+
 
 
 

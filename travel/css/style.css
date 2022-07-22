@@ -207,6 +207,11 @@ ul {
     border-radius: 16px;
 }
 
+.popup__wrap_activ{
+    width: 650px;
+    height: 436px;
+}
+
 .popup__container{
     margin: 0 45px;
 }
@@ -380,6 +385,11 @@ ul {
 .registr{
     background-color: inherit;
     border: none;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.register__srt{
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 700;
@@ -1010,10 +1020,7 @@ ul {
 /* --------------------------*/
 
 @media (max-width: 390px) {
-    html{
-       /*  overflow-x: hidden; */
-    }
-
+    
     .container {
         max-width: 360px;
         margin: auto;
