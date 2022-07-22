@@ -4,6 +4,36 @@ console.log('Вёрстка соответствует макету. Ширин�
 console.log('Итого 75 баллов')
 
 
+const popup = document.querySelector('.popup');
+const popupWrap = document.querySelector('.popup__wrap');
+const login = document.querySelector('.login');
+
+if(login) {
+    login.addEventListener("click", () => {
+        popup.classList.toggle('popup_activ');
+    });
+}
+
+if(popupWrap) {
+    popup.addEventListener("click", (event) => {
+        event.target.classList.remove('popup_activ');
+    });
+}
+
+
+const boxInputBtn = document.querySelector('.box-input__btn');
+
+if(boxInputBtn) {
+    boxInputBtn.addEventListener("click", () => {
+        let inputLogin = document.querySelector('.login__input').value;
+        let inputPassword = document.querySelector('.password').value;
+        alert(`Your login: ${inputLogin}\nYour password: ${inputPassword}`);
+    });
+}
+
+
+
+
 
 const menu = document.querySelector('.menu');
 const navBurger = document.querySelector('.nav__burger');

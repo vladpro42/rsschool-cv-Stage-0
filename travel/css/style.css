@@ -189,8 +189,14 @@ ul {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 30px;left: 0;
+    left: 0;
     z-index: 150;
+    transform: translateY(-105%);
+    transition: transform 1500ms ease;
+}
+
+.popup_activ{
+    transform: translateY(0);
 }
 
 .popup__wrap{
