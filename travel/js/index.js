@@ -4,6 +4,90 @@ console.log('Вёрстка соответствует макету. Ширин�
 console.log('Итого 75 баллов')
 
 
+const popup = document.querySelector('.popup');
+const popupWrap = document.querySelector('.popup__wrap');
+const login = document.querySelector('.login');
+
+//Открытие попапа
+if(login) {
+    login.addEventListener("click", () => {
+        popup.classList.toggle('popup_activ');
+    });
+}
+
+//Закрытие попапа по клику вне
+if(popupWrap) {
+    popup.addEventListener("click", (event) => {
+        event.target.classList.remove('popup_activ');
+    });
+}
+
+// данные в алерт
+const boxInputBtn = document.querySelector('.box-input__btn');
+
+if(boxInputBtn) {
+    boxInputBtn.addEventListener("click", () => {
+        let inputLogin = document.querySelector('.login__input').value;
+        let inputPassword = document.querySelector('.password').value;
+        alert(`Your login: ${inputLogin}\nYour password: ${inputPassword}`);
+    });
+}
+
+//Текст изменения по клику на кнопку регистр
+const register = document.querySelector('.registr');
+
+if(register) {
+    register.addEventListener("click", () => {
+        const popupWrapActiv = document.querySelector('.popup__wrap');
+        popupWrapActiv.classList.toggle('popup__wrap_activ');
+
+        const buttonArr = document.querySelectorAll('.sign__login');
+       
+        if(popupWrapActiv.classList.contains('popup__wrap_activ')) {
+
+            buttonArr.forEach(item => {
+                item.style.display = "none";
+            });
+
+            document.querySelector('.box__or').style.display = 'none';
+            document.querySelector('.sign__sub-text').style.display = 'none';
+            document.querySelector('.line').style.marginTop = "26px";
+
+            document.querySelector('.login__title').textContent = "Create account";
+            document.querySelector('.text').textContent = "Already have an account?";
+            document.querySelector('.registr > span').textContent = "Log in";
+            document.querySelector('.box-input__btn > span').textContent = "Sign Up";
+        } else {
+
+            buttonArr.forEach(item => {
+                item.removeAttribute("style");
+            });
+            document.querySelector('.box__or').removeAttribute("style");
+            document.querySelector('.sign__sub-text').removeAttribute("style");
+            document.querySelector('.line').removeAttribute("style");
+            
+            document.querySelector('.login__title').textContent = "Log in to your account";
+            document.querySelector('.text').textContent = "Don’t have an account?";
+            document.querySelector('.registr > span').textContent = "Register";
+            document.querySelector('.box-input__btn > span').textContent = "Sign In";
+        }
+        
+        
+    });
+}
+
+// Вызов попапа по ссылке аккаунт
+const linkAccountBtn = document.getElementById('link__account_btn');
+
+if(linkAccountBtn) {
+    linkAccountBtn.addEventListener("mousedown", () => {
+        popup.classList.toggle('popup_activ');
+        menu.classList.remove('activ__menu');
+        navBurger.classList.remove('nav__burger--activ');
+        body.classList.remove("activ");
+    });
+}
+
 
 const menu = document.querySelector('.menu');
 const navBurger = document.querySelector('.nav__burger');
@@ -57,4 +141,30 @@ document.addEventListener('mousedown', (i) => {
       body.classList.remove("activ");
    }
 })
+
+//SLIDER SWIPER
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 60,
+    slideToClickedSlide: true,
+    initialSlide: 1,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+  });
 
