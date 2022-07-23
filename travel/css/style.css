@@ -817,6 +817,98 @@ ul {
 
 @media (max-width: 700px){
 
+    .popup__wrap{
+        width: 450px;
+        height: 480px;
+    }
+
+    .popup__wrap_activ{
+        height: 350px;
+    }
+
+    .popup__container{
+        margin: 0 25px;
+    }
+
+    .login__title{
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 15px;
+    }
+
+    .sign{
+        height: 40px;
+    }
+
+    .sign + .sign {
+        margin-top: 10px;
+    }
+
+    .sign__text{
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .sign__text::before {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .box__or{
+        margin: 10px 0 5px 0;
+    }
+
+    .box__text{
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .input__wrap + .input__wrap {
+        margin-top: 15px;
+    }
+
+    .input__title{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .input {
+        height: 40px;
+    }
+
+    .input[type="text"], .input[type="password"]{
+        font-size: 16px;
+        line-height: 18px;
+        padding: 0 5px;
+    }
+
+    .box-input__btn{
+        margin-top: 15px;
+    }
+    
+    .sign__sub-text{
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    .line{
+        margin-bottom: 10px;
+    }
+
+    .text{
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .register__srt{
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    /* ---------------*/
+
     .header__title > img {
         width: 100%;
         height: 100%;
