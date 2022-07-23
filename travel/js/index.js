@@ -8,19 +8,21 @@ const popup = document.querySelector('.popup');
 const popupWrap = document.querySelector('.popup__wrap');
 const login = document.querySelector('.login');
 
+//Открытие попапа
 if(login) {
     login.addEventListener("click", () => {
         popup.classList.toggle('popup_activ');
     });
 }
 
+//Закрытие попапа по клику вне
 if(popupWrap) {
     popup.addEventListener("click", (event) => {
         event.target.classList.remove('popup_activ');
     });
 }
 
-
+// данные в алерт
 const boxInputBtn = document.querySelector('.box-input__btn');
 
 if(boxInputBtn) {
@@ -31,6 +33,7 @@ if(boxInputBtn) {
     });
 }
 
+//Текст изменения по клику на кнопку регистр
 const register = document.querySelector('.registr');
 
 if(register) {
@@ -39,24 +42,51 @@ if(register) {
         popupWrapActiv.classList.toggle('popup__wrap_activ');
 
         const buttonArr = document.querySelectorAll('.sign__login');
-        buttonArr.forEach(item => {
-            item.style.display = "none";
-        });
+       
+        if(popupWrapActiv.classList.contains('popup__wrap_activ')) {
 
-        document.querySelector('.box__or').style.display = 'none';
-        document.querySelector('.sign__sub-text').style.display = 'none';
-        document.querySelector('.line').style.marginTop = "26px";
+            buttonArr.forEach(item => {
+                item.style.display = "none";
+            });
 
-        document.querySelector('.login__title').textContent = "Create account";
-        document.querySelector('.text').textContent = "Already have an account?";
-        document.querySelector('.registr').textContent = "Log in";
-        boxInputBtn.textContent = "Sign Up";
+            document.querySelector('.box__or').style.display = 'none';
+            document.querySelector('.sign__sub-text').style.display = 'none';
+            document.querySelector('.line').style.marginTop = "26px";
+
+            document.querySelector('.login__title').textContent = "Create account";
+            document.querySelector('.text').textContent = "Already have an account?";
+            document.querySelector('.registr > span').textContent = "Log in";
+            document.querySelector('.box-input__btn > span').textContent = "Sign Up";
+        } else {
+
+            buttonArr.forEach(item => {
+                item.removeAttribute("style");
+            });
+            document.querySelector('.box__or').removeAttribute("style");
+            document.querySelector('.sign__sub-text').removeAttribute("style");
+            document.querySelector('.line').removeAttribute("style");
+            
+            document.querySelector('.login__title').textContent = "Log in to your account";
+            document.querySelector('.text').textContent = "Don’t have an account?";
+            document.querySelector('.registr > span').textContent = "Register";
+            document.querySelector('.box-input__btn > span').textContent = "Sign In";
+        }
+        
         
     });
 }
 
+// Вызов попапа по ссылке аккаунт
+const linkAccountBtn = document.getElementById('link__account_btn');
 
-
+if(linkAccountBtn) {
+    linkAccountBtn.addEventListener("mousedown", () => {
+        popup.classList.toggle('popup_activ');
+        menu.classList.remove('activ__menu');
+        navBurger.classList.remove('nav__burger--activ');
+        body.classList.remove("activ");
+    });
+}
 
 
 const menu = document.querySelector('.menu');

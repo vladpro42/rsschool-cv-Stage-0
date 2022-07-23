@@ -1020,7 +1020,101 @@ ul {
 /* --------------------------*/
 
 @media (max-width: 390px) {
+
+    /* ------POPUP----------*/
+
+    .popup__wrap{
+        width: 340px;
+        height: 390px;
+    }
+
+    .popup__wrap_activ{
+        height: 300px;
+    }
+
+    .popup__container{
+        margin: 0 20px;
+    }
+
+    .login__title{
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    .sign{
+        height: 30px;
+    }
+
+    .sign + .sign {
+        margin-top: 10px;
+    }
+
+    .sign__text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .sign__text::before {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    .box__or{
+        margin: 10px 0 5px 0;
+    }
+
+    .box__text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .input__wrap + .input__wrap {
+        margin-top: 10px;
+    }
+
+    .input__title{
+        font-size: 12px;
+        line-height: 14px;
+    }
     
+    .input {
+        height: 30px;
+    }
+
+    .input[type="text"], .input[type="password"]{
+        font-size: 12px;
+        line-height: 14px;
+        padding: 0 5px;
+    }
+
+    .box-input__btn{
+        margin-top: 15px;
+    }
+    
+    .sign__sub-text{
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 10px;
+    }
+
+    .line{
+        margin-bottom: 10px;
+    }
+
+    .text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .register__srt{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    /* ---------------*/
+
+
     .container {
         max-width: 360px;
         margin: auto;
