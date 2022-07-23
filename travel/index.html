@@ -8,9 +8,9 @@
     <link type="image/x-ico" rel="shortcut icon" href="images/007suitcase_114154.ico">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -126,18 +126,31 @@
                 </ul>
             </div>
         </section>
-         <section class="destinations container" id="destinations">
-            <h2 class="destinations__title title__h2" >POPULAR DESTINATIONS</h2>
-            <div class="slider">
-                <div class="slider__item-box">
-                    <img class="slider__item" src="images/slider-1.jpg" alt="slider__photo">
+         <section class="destinations" id="destinations">
+            <div class="container">
+                <h2 class="destinations__title title__h2" >POPULAR DESTINATIONS</h2>
+            </div>
+            <div class="swiper">
+                <div class="slider swiper-wrapper">
+                    <div class="  swiper-slide">
+                        <div class="slider__item-box spain">
+                            <img class="slider__item" src="images/slider-1.jpg" alt="slider__photo">
+                        </div>
+                    </div>
+                    <div class="  swiper-slide">
+                        <div class="slider__item-box slider__item-box1">
+                            <img class="slider__item" src="images/slider-2.jpg" alt="slider__photo">
+                        </div>
+                    </div>
+                    <div class="  swiper-slide">
+                        <div class="slider__item-box usa">
+                            <img class="slider__item" src="images/slider-3.jpg" alt="slider__photo">
+                        </div>
+                    </div>                
                 </div>
-                <div class="slider__item-box slider__item-box1">
-                    <img class="slider__item" src="images/slider-2.jpg" alt="slider__photo">
-                </div>
-                <div class="slider__item-box">
-                    <img class="slider__item" src="images/slider-3.jpg" alt="slider__photo">
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
             <button class="btn destinations__btn">Find More</button>
         </section> 
@@ -227,6 +240,7 @@
                 </div>
             </div>
         </footer> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

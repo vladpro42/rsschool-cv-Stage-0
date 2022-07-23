@@ -435,6 +435,8 @@ ul {
     color: #0d606f;
 }
 
+/* --------destinations--------*/
+
 .destinations {
     margin-bottom: 80px;
     text-align: center;
@@ -445,20 +447,58 @@ ul {
     margin-bottom: 46px;
 }
 
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
 .slider {
     margin-bottom: 84px;
 }
 
+.swiper-slide{
+    width: 60%;
+}
+
+/* .swiper-slide:nth-child(2n) {
+    width: 60%;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    width: 60%;
+  } */
+
 .slider__item-box{
     margin-bottom: 15px;
     position: relative;
+    width: 800px;
+    height: 800px;
 }
 
-.slider__item-box:before{
+.slider__item-box::before{
     position: absolute;
     bottom: 45px;
-    left: 218px;
+    left: 20px;
     content: 'JAPAN';
+    color: #fff;
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.spain{
+    position: relative;
+}
+
+.spain::before{
+    position: absolute;
+    bottom: 45px;
+    left: 20px;
+    content: 'SPAIN';
     color: #fff;
     font-family: 'Red Hat Text';
     font-style: normal;
@@ -468,12 +508,37 @@ ul {
     text-transform: uppercase;
 }
 
-.slider__item-box:nth-child(1)::before{
-    content: 'SPAIN';
+.usa::before{
+    position: absolute;
+    bottom: 45px;
+    left: 20px;
+    content: 'USA';
+    color: #fff;
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-transform: uppercase;
 }
 
-.slider__item-box:nth-child(3)::before{
-    content: 'USA';
+.swiper-button-next, .swiper-button-prev{
+    display: none;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 50px;
+}
+
+.swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+    background: rgba(242, 120, 92);
+    opacity: 0.4;
+} 
+
+.swiper-pagination-bullet-active{
+    opacity: 1;
 }
 
 .destinations__btn {
@@ -639,6 +704,10 @@ ul {
 .social-list__link--flex {
     display: flex;
     align-items: center;
+}
+
+@media(max-width: 1320px){
+   
 }
 
 @media(max-width: 1170px){
