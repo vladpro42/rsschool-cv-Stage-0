@@ -148,11 +148,34 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 'auto',
+    
     centeredSlides: true,
     spaceBetween: 60,
     slideToClickedSlide: true,
     initialSlide: 1,
+
+    breakpoints: {
+         1291: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+        }, 
+
+        /* 1000: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },  */
+
+       /*  391: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        }, */
+
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            initialSlide: 0,
+        },
+    },
   
     // If we need pagination
     pagination: {
