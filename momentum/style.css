@@ -9,6 +9,10 @@ html{
     padding: 0;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container{
     max-width: 1220px;
     padding:  0 10px;
@@ -50,4 +54,31 @@ main{
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
+}
+
+.hello__text-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.hello__text {
+    text-align: center;
+    min-height: 48px;
+    font-size: 40px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.name{
+    flex: 1 1 0%;
+    max-width: 30%;
+    padding: 10px;
+    font-size: 40px;
+    text-align: left;
+    color: pink;
+    background-color: transparent;
+    outline: 0px;
+    border-radius: 15px;
 }
