@@ -12,7 +12,10 @@ showDate();
 
 // Текст приветствия 
 const hiText = document.querySelector('.hello__text');
-const timeOfDay = getTimeOfDay()
+
+
+
+let timeOfDay = getTimeOfDay();
 showGreeting();
 
 
@@ -32,6 +35,16 @@ window.addEventListener('load', () => {
         userName.value = localStorage.getItem('name');
     }
 });
+
+// Фоновое изображение 
+
+const body = document.body;
+
+let randomNum = getRandomNum(1, 20);
+let stateOfTheDayValue = stateOfTheDay();
+let linkBodyBackgroundImage = setBg(stateOfTheDayValue);
+
+body.style.backgroundImage = "url(" + `${linkBodyBackgroundImage}`+")";
 
 
 
@@ -59,22 +72,59 @@ function showDate() {
 }
 
 function getTimeOfDay() {
-    
     const date = new Date();
     const hour = date.getHours();
-    if( hour >= 6 && hour < 12) return 'Доброе утро';
-    if( hour >= 12 && hour < 18) return 'Добрый день';
-    if( hour >= 18 && hour < 0) return 'Добрый вечер';
-    if( hour >= 0 && hour < 6) return 'Спокойной ночи';
+    return hour;
 }
 
 function showGreeting() {
     setTimeout(showGreeting, 60000);
-    console.log(timeOfDay)
-    return hiText.textContent = `${timeOfDay}`
+
+    let greetings;
+    if( timeOfDay >= 6 && timeOfDay < 12) {
+        greetings = 'Доброе утро';
+    } else if ( timeOfDay >= 12 && timeOfDay < 18){
+        greetings = 'Добрый день';
+    } else if( timeOfDay >= 18 && timeOfDay < 24) {
+        greetings = 'Добрый вечер';
+    } else if(timeOfDay >= 0 && timeOfDay < 6){
+        greetings = 'Спокойной ночи';
+    }
+
+    return hiText.textContent = `${greetings}`
 }
 
 
+function getRandomNum(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function setBg(stateOfTheDayValue) { 
+    if(`${randomNum}`.length < 2) {
+        randomNum = `${randomNum}`.padStart(2, '0');
+    }
+    let link = 'https://github.com/vladpro42/Momentum-images/blob/assets/images/' + `${stateOfTheDayValue}` + `/${randomNum}` + '.jpg?raw=true';
+    return link
+}
+
+function stateOfTheDay() {
+    const date = new Date();
+    const hour = date.getHours();
+    let stateOfTheDayValue;
+    if( timeOfDay >= 6 && timeOfDay < 12) {
+        stateOfTheDayValue = 'morning';
+    } else if ( timeOfDay >= 12 && timeOfDay < 18){
+        stateOfTheDayValue = 'afternoon';
+    } else if( timeOfDay >= 18 && timeOfDay < 24) {
+        stateOfTheDayValue = 'evening';
+    } else if(timeOfDay >= 0 && timeOfDay < 6){
+        stateOfTheDayValue = 'night';
+    }
+
+    return stateOfTheDayValue;
+}
 
 
 
