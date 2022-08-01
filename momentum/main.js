@@ -130,14 +130,11 @@ function setBg(stateOfTheDayValue,bgNum) {
     let link = "url(" +'https://github.com/vladpro42/Momentum-images/blob/assets/images/' + `${stateOfTheDayValue}` + `/${bgNum}` + '.jpg?raw=true' +")";
 
     const img = new Image();
-    img.src = link;
-    console.log(img)
+    img.src = 'https://github.com/vladpro42/Momentum-images/blob/assets/images/' + `${stateOfTheDayValue}` + `/${bgNum}` + '.jpg?raw=true';
     img.addEventListener('load', () => {
-        body.style.backgroundImage = `https://github.com/vladpro42/Momentum-images/blob/assets/images/ + ${stateOfTheDayValue} + /${bgNum} + '.jpg'`
-    })
-     
-    /*"url(" + `https://github.com/vladpro42/Momentum-images/blob/assets/images/ + ${stateOfTheDayValue} + /${bgNum} + '.jpg?raw=true';`+")" */
-    body.style.backgroundImage = link;
+        body.style.backgroundImage = link
+    });
+    
     return link
 }
 
