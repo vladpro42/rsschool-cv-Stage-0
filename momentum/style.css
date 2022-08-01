@@ -90,10 +90,24 @@ main{
     border: none;
     background: inherit;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+
+.slide__prev{
+    left:  25px;
+}
+
+.slide__next{
+    right: 25px;
 }
 
 path{
     fill: #fff;
+}
+
+.weather__city-input{
+    background: inherit;
 }
 
 
