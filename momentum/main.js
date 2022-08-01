@@ -4,24 +4,17 @@
 const time = document.querySelector('.time');
 showTime();
 
-
 // День недели число месяц
 const timeDate = document.querySelector('.date');
 showDate();
 
-
 // Текст приветствия 
 const hiText = document.querySelector('.hello__text');
-
-
-
 let timeOfDay = getTimeOfDay();
 showGreeting();
 
-
 // Введенное имя
 const userName = document.querySelector('.name');
-
 //перед перезагрузкой или закрытием страницы (событие beforeunload) данные нужно сохранить
 
 window.addEventListener('beforeunload', () => {
@@ -35,18 +28,6 @@ window.addEventListener('load', () => {
         userName.value = localStorage.getItem('name');
     }
 });
-
-// Фоновое изображение 
-
-const body = document.body;
-
-let randomNum = getRandomNum(1, 20);
-let stateOfTheDayValue = stateOfTheDay();
-let linkBodyBackgroundImage = setBg(stateOfTheDayValue);
-
-body.style.backgroundImage = "url(" + `${linkBodyBackgroundImage}`+")";
-
-
 
 // Время часы: минуты: секунды.
 function showTime() {
@@ -95,17 +76,68 @@ function showGreeting() {
 }
 
 
-function getRandomNum(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+
+
+
+
+
+
+
+
+
+// Фоновое изображение 
+
+const body = document.body;
+
+let randomNum = getRandomNum(1, 20);
+let stateOfTheDayValue = stateOfTheDay();
+
+let linkBodyBackgroundImage = setBg(stateOfTheDayValue, randomNum);
+//body.style.backgroundImage = "url(" + `${linkBodyBackgroundImage}`+")";
+//setBg(stateOfTheDayValue, randomNum)
+
+
+const btnSlidePrev = document.querySelector('.slide__prev');
+const btnSlideNext = document.querySelector('.slide__next');
+
+btnSlidePrev.addEventListener('click', getSlidePrev) 
+btnSlideNext.addEventListener('click', getSlideNext)
+   
+
+
+function getSlidePrev() {
+    randomNum--;
+    if(randomNum === 0){
+        randomNum = 20;
+    }
+
+    setBg(stateOfTheDayValue, randomNum)
 }
 
-function setBg(stateOfTheDayValue) { 
-    if(`${randomNum}`.length < 2) {
-        randomNum = `${randomNum}`.padStart(2, '0');
+function getSlideNext() {
+    randomNum++;
+    if(randomNum === 21){
+        randomNum = 1;
     }
-    let link = 'https://github.com/vladpro42/Momentum-images/blob/assets/images/' + `${stateOfTheDayValue}` + `/${randomNum}` + '.jpg?raw=true';
+
+    setBg(stateOfTheDayValue, randomNum)
+}
+
+function setBg(stateOfTheDayValue,bgNum) { 
+    if(`${bgNum}`.length < 2) {
+        bgNum = `${bgNum}`.padStart(2, '0');
+    }
+    let link = "url(" +'https://github.com/vladpro42/Momentum-images/blob/assets/images/' + `${stateOfTheDayValue}` + `/${bgNum}` + '.jpg?raw=true' +")";
+
+    const img = new Image();
+    img.src = link;
+    console.log(img)
+    img.addEventListener('load', () => {
+        body.style.backgroundImage = `https://github.com/vladpro42/Momentum-images/blob/assets/images/ + ${stateOfTheDayValue} + /${bgNum} + '.jpg'`
+    })
+     
+    /*"url(" + `https://github.com/vladpro42/Momentum-images/blob/assets/images/ + ${stateOfTheDayValue} + /${bgNum} + '.jpg?raw=true';`+")" */
+    body.style.backgroundImage = link;
     return link
 }
 
@@ -126,10 +158,11 @@ function stateOfTheDay() {
     return stateOfTheDayValue;
 }
 
-
-
-
-
+function getRandomNum(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
 
