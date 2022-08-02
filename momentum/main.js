@@ -164,7 +164,7 @@ function getRandomNum(min, max) {
 
 // Погода 
 
-//let city = 'Minsk';
+//let cityDefault = 'Minsk';
 let langWeather = 'en';
 /* let weatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric` */
 //console.log(weatherLink)
@@ -173,6 +173,9 @@ const weatherIcon = document.querySelector('.weather__icon');
 const weatherTemperature = document.querySelector('.weather__temperature');
 const weatherDescr = document.querySelector('.weather__descr');
 const weatherCityInput = document.querySelector('.weather__city-input');
+const weatherHumidity = document.querySelector('.weather__humidity');
+const weatherWindSpeed = document.querySelector('.weather__wind-speed');
+
 
 
 getWeather(weatherCityInput.value);
@@ -190,15 +193,18 @@ weatherCityInput.addEventListener('change', () => {
     getWeather(weatherCityInput.value);
 });
 
-async function getWeather(city) {
+async function getWeather(city = 'Minsk') {
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
 
-    weatherIcon.className = 'weather-icon owf';
+    weatherIcon.className = 'weather-icon owf owf-4x';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     weatherTemperature.textContent = `${data.main.temp}°C`;
     weatherDescr.textContent = data.weather[0].description;
+    weatherHumidity.textContent = 'Humidity: ' + data.main.humidity +' %';
+    weatherWindSpeed.textContent = 'Wind speed: ' + data.wind.speed + ' m/s'
 }
 
 
