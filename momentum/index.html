@@ -13,7 +13,28 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <div class="audio__palyer"></div>
+                <div class="audion__player">
+                    <div class="audion__controls">
+                        <button class="prev player__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 64 64">
+                                    <title>backward</title>
+                                    <path fill="#fff" d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"/>
+                                </svg>
+                        </button>
+                        <button class="play player__icon">
+                            <!-- <img src="images/play.svg" alt=""> -->
+
+                          
+                        </button>
+                        <button class="next player__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 64 64">
+                                <title>backward</title>
+                                <path fill="#fff" d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <audio src="https://7oom.ru/audio/naturesounds/07%20Birds%20(7oom.ru).mp3" ></audio>
+                </div>
                 <div class="weather">
                     <div class="weather__city">
                         <input class="weather__city-input" type="text" placeholder="Enter sity" value="Minsk">
@@ -50,10 +71,17 @@
                         <input type="text" class="name"  placeholder="Enter name">
                     </div>
                 </div>
+                <div class="quot">
+                    <span class="quot__text"></span>
+                </div>
             </div>
         </div>
     </main>
     <footer class="footer"></footer>
-    <script type="text/javascript" src="main.js"></script>
+    
+    <script type="module" src="js/main.js"></script>
+    <script  src="./js/playList.js"></script>
+    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+   
 </body>
 </html>

@@ -48,6 +48,42 @@ header, main, footer {
     align-items: center;
 }
 
+.audion__controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player__icon{
+    background: transparent no-repeat center center;
+    border:  none;
+  
+}
+
+.prev > svg, .next > svg{
+    width: 40px;
+    height: 40px;
+}
+
+.next{
+    transform: scale(-1, 1);
+    /* transform: rotate(180deg); */
+    /* transform: perspective(180); */
+}
+.play {
+    background: url('../images/play.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
+.pause {
+    background: url('../images/pause.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
 /* .weather{
     max-width: 200px;
 } */
