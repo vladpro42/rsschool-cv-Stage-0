@@ -84,6 +84,17 @@ header, main, footer {
     transition: background 0.3s linear;
 }
 
+.play__item{
+    margin-top: 10px;
+}
+
+.play__item{
+    color: #fff;
+}
+
+.play__item--activ{
+    color: blueviolet;
+}
 /* .weather{
     max-width: 200px;
 } */

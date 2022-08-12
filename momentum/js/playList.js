@@ -9,6 +9,11 @@
       title: 'Skyrim',
       src: './music/skyrim.mp3',
       duration: '03:57'
+    },
+    {
+      title: 'Fon Skyrim',
+      src: './music/FonSkyrim.mp3',
+      duration: '05:28',
     }
   ]
   export default playList; 

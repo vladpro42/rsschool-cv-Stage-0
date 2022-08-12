@@ -245,8 +245,7 @@ let quot__text = document.querySelector('.quot__text');
 
 
   // AUDIO 
-
-  
+ 
 import playList  from './playList.js';
 
 
@@ -256,6 +255,16 @@ let isPlay = false;
 let playNum = 0; 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const playListUl = document.querySelector('.play__list');
+let numActivClass = 0;
+playList.forEach( (el)  => {
+    const li = document.createElement('li');
+    li.classList.add('play__item');
+    playListUl.append(li)
+    li.textContent = el.title;
+});
+
+const arrayLi = document.querySelectorAll('.play__item');
 
 playAudioBtn.addEventListener('click', () => {
     playAudioBtn.classList.toggle('pause');
@@ -265,37 +274,59 @@ playAudioBtn.addEventListener('click', () => {
 
 prev.addEventListener('click', () => {
     playPrev();
-   
+   /*  arrayLi[numActivClass].classList.remove('play__item--activ');
+    if(numActivClass < 0){
+        numActivClass = classList.length;
+    } else {
+        numActivClass--
+    } */
+    /* --numActivClass;
+   if(numActivClass < 0){
+    console.log(numActivClass)
+    numActivClass = 2;
+    console.log(numActivClass)
+   } */
+  /*  arrayLi[numActivClass].classList.add('play__item--activ');  */
 });
 
 next.addEventListener('click', () => {
-    playNext()
-    
-});
+    playNext();
+    arrayLi[numActivClass].classList.remove('play__item--activ');
+    numActivClass++;
+    if(numActivClass == playList.length){
+     numActivClass = 0
+    }
+    arrayLi[numActivClass].classList.add('play__item--activ'); 
+})
 
 function playAudio() {
+
     audio.src = playList[playNum].src;
     audio.currentTime = 0;
-
     if(!(isPlay === false)){
         audio.play();
     } else if( isPlay === false){
         audio.pause();
     }
+    audio.addEventListener('ended', () => {
+        playNext()
+    }) 
 }
 
 function playPrev() {
-    //isPlay = true;
-    if(playNum != 0){
-        playNum--;
+    --playNum;
+    if(playNum < 0) {
+        playNum = playList.length;
     }
     playAudio();
 }
 
 function playNext() {
-    //isPlay = true;
-    if(playNum < playList.length - 1) {
-        playNum++
+    playNum = playNum + 1;
+    if(playNum == playList.length) {
+        playNum = 0;
     }
-    playAudio();
+    playAudio();    
 }
+
+ 
