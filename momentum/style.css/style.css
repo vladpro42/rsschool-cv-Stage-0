@@ -96,9 +96,25 @@ header, main, footer {
 .play__item--activ{
     color: rgb(209, 133, 33);
 }
-/* .weather{
-    max-width: 200px;
-} */
+
+.language__box{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 25px;
+}
+
+.language__btn{
+    background: transparent no-repeat;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+ .weather{
+    max-width: 240px;
+} 
 
 .weather__city-input{
     background: inherit;
@@ -216,7 +232,7 @@ main{
     border: none;
     background: inherit;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 50%;
 }
 

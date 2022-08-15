@@ -1,6 +1,41 @@
 
 'use strict'
 
+ // Languege 
+ let langWeather = 'ru';
+ const greetingTranslation = {
+    ru : 'ru',
+    en : 'en',
+    greetings : ['Доброе утро', 'Добрый день', 'Добрый вечер', 'Спокойной ночи','Good morning', 'Good afternoon', 'Good evening', 'Good night'],
+    
+}
+ const languageBtn = document.querySelector('.language__btn');
+ let localesArr = 'ru-Ru';
+
+ languageBtn.addEventListener('click', () => {
+     if(languageBtn.textContent == 'RU'){
+        languageBtn.textContent = 'EN';
+        showGreeting(greetingTranslation.en);
+        /* setTimeout(showGreeting(greetingTranslation.en), 5000); */
+        langWeather = 'en';
+        getWeather(weatherCityInput.value);
+        localesArr = 'en-US';
+        getQuotes('en'); 
+
+     } else if(languageBtn.textContent == 'EN'){
+        languageBtn.textContent = 'RU';
+        showGreeting(greetingTranslation.ru);
+       /*  setTimeout(showGreeting(greetingTranslation.ru), 5000); */
+        langWeather = 'ru';
+        getWeather(weatherCityInput.value);
+        localesArr = 'ru-Ru';
+        getQuotes('ru'); 
+        
+     }
+
+ });
+ 
+
 
 
 
@@ -15,7 +50,7 @@ showDate();
 // Текст приветствия 
 const hiText = document.querySelector('.hello__text');
 let timeOfDay = getTimeOfDay();
-showGreeting();
+showGreeting(greetingTranslation.ru);
 
 // Введенное имя
 const userName = document.querySelector('.name');
@@ -44,7 +79,6 @@ function showTime() {
 
 function showDate() {
     const date = new Date();
-    const localesArr = ['ru-RU', 'en-US', 'en-Br']
     const options = {
         weekday: 'long',
         month: 'long',
@@ -62,31 +96,33 @@ function getTimeOfDay() {
     return hour;
 }
 
-function showGreeting() {
-    setTimeout(showGreeting, 60000);
+function showGreeting(lang) {
+     /* setTimeout(showGreeting(lang), 5000);  */
 
     let greetings;
-    if( timeOfDay >= 6 && timeOfDay < 12) {
-        greetings = 'Доброе утро';
-    } else if ( timeOfDay >= 12 && timeOfDay < 18){
-        greetings = 'Добрый день';
-    } else if( timeOfDay >= 18 && timeOfDay < 24) {
-        greetings = 'Добрый вечер';
-    } else if(timeOfDay >= 0 && timeOfDay < 6){
-        greetings = 'Спокойной ночи';
+    if( lang === 'ru' ){
+        if( timeOfDay >= 6 && timeOfDay < 12) {
+            greetings = greetingTranslation.greetings[0]
+        } else if ( timeOfDay >= 12 && timeOfDay < 18){
+            greetings = greetingTranslation.greetings[1]
+        } else if( timeOfDay >= 18 && timeOfDay < 24) {
+            greetings = greetingTranslation.greetings[2]
+        } else if(timeOfDay >= 0 && timeOfDay < 6){
+            greetings = greetingTranslation.greetings[3]
+        }
+    } else if( lang === 'en' ){
+        if( timeOfDay >= 6 && timeOfDay < 12) {
+            greetings = greetingTranslation.greetings[4]
+        } else if ( timeOfDay >= 12 && timeOfDay < 18){
+            greetings = greetingTranslation.greetings[5]
+        } else if( timeOfDay >= 18 && timeOfDay < 24) {
+            greetings = greetingTranslation.greetings[6]
+        } else if(timeOfDay >= 0 && timeOfDay < 6){
+            greetings = greetingTranslation.greetings[7]
+        }
     }
-
     return hiText.textContent = `${greetings}`
 }
-
-
-
-
-
-
-
-
-
 
 
 // Фоновое изображение 
@@ -169,8 +205,8 @@ function getRandomNum(min, max) {
 // Погода 
 
 //let city = 'Minsk';
-let langWeather = 'en';
-/* let weatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric` */
+
+/* let weatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${Minsk}&lang=ru&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric` */
 //console.log(weatherLink)
 
 const weatherIcon = document.querySelector('.weather__icon');
@@ -205,13 +241,17 @@ async function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
+    console.log( data )
     if( data.name === undefined /* data.message === 'city not found' */ ) {
-        weatherDescr.textContent = 'Вы ввели не';
         weatherIcon.classList.add('weather__display-none');
         weatherTemperature.classList.add('weather__display-none');
+        weatherDescr.textContent = 'Вы ввели не';
         weatherHumidity.textContent = 'существующий город';
         weatherWindSpeed.classList.add('weather__display-none');
     } else {
+        weatherIcon.classList.remove('weather__display-none');
+        weatherTemperature.classList.remove('weather__display-none');
+        weatherWindSpeed.classList.remove('weather__display-none');
         weatherIcon.className = 'weather-icon owf owf-4x';
         weatherIcon.classList.add(`owf-${data.weather[0].id}`);
         weatherTemperature.textContent = `${Math.round(data.main.temp)}` + ` °C`;
@@ -239,17 +279,27 @@ updateQuote.addEventListener("click", () => {
     } else{
         randomNumberQuot++;
     }
-    getQuotes(); 
+    getQuotes(langWeather); 
 })
 
-  async function getQuotes() {  
-    const quotes = 'data.json';
-    const res = await fetch(quotes);
-    const data = await res.json(); 
-    quotText.textContent = data[randomNumberQuot].text;
-    quotAuthor.textContent = data[randomNumberQuot].author;
+  async function getQuotes(lang) {  
+    if(lang === 'ru'){
+        const quotes = 'data.json';
+        const res = await fetch(quotes);
+        const data = await res.json(); 
+        quotText.textContent = data[randomNumberQuot].text;
+        quotAuthor.textContent = data[randomNumberQuot].author;
+    } else if (lang === 'en'){
+        const quotes = 'dataEn.json';
+        const res = await fetch(quotes);
+        const data = await res.json(); 
+        quotText.textContent = data[randomNumberQuot].text;
+        quotAuthor.textContent = data[randomNumberQuot].author;
+    }
+   
   } 
-getQuotes(); 
+  getQuotes('ru'); 
+
 
   function myRandomNum(){
     let min = 0;
@@ -345,4 +395,3 @@ function playNext() {
     playAudio();    
 }
 
- 
