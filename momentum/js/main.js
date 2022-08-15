@@ -274,20 +274,19 @@ playAudioBtn.addEventListener('click', () => {
 
 prev.addEventListener('click', () => {
     playPrev();
-   /*  arrayLi[numActivClass].classList.remove('play__item--activ');
-    if(numActivClass < 0){
-        numActivClass = classList.length;
+    arrayLi[numActivClass].classList.remove('play__item--activ');
+    
+    if(numActivClass <= 0){
+        numActivClass = playList.length - 1;
+        console.log(numActivClass)
     } else {
         numActivClass--
-    } */
-    /* --numActivClass;
-   if(numActivClass < 0){
-    console.log(numActivClass)
-    numActivClass = 2;
-    console.log(numActivClass)
-   } */
-  /*  arrayLi[numActivClass].classList.add('play__item--activ');  */
+    } 
+    
+    arrayLi[numActivClass].classList.add('play__item--activ'); 
 });
+
+arrayLi[numActivClass].classList.add('play__item--activ');
 
 next.addEventListener('click', () => {
     playNext();
@@ -316,7 +315,7 @@ function playAudio() {
 function playPrev() {
     --playNum;
     if(playNum < 0) {
-        playNum = playList.length;
+        playNum = playList.length - 1;
     }
     playAudio();
 }
