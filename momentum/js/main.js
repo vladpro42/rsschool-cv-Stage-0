@@ -205,46 +205,63 @@ async function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
+    if( data.name === undefined /* data.message === 'city not found' */ ) {
+        weatherDescr.textContent = 'Вы ввели не';
+        weatherIcon.classList.add('weather__display-none');
+        weatherTemperature.classList.add('weather__display-none');
+        weatherHumidity.textContent = 'существующий город';
+        weatherWindSpeed.classList.add('weather__display-none');
+    } else {
+        weatherIcon.className = 'weather-icon owf owf-4x';
+        weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+        weatherTemperature.textContent = `${Math.round(data.main.temp)}` + ` °C`;
+        weatherDescr.textContent = (data.weather[0].description);
+        weatherHumidity.textContent = 'Humidity: ' + Math.round(data.main.humidity) +' %';
+        weatherWindSpeed.textContent = 'Wind speed: ' + Math.round(data.wind.speed) + ' m/s';    
+    }
     
-    weatherIcon.className = 'weather-icon owf owf-4x';
-    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    weatherTemperature.textContent = `${Math.round(data.main.temp)}` + ` °C`;
-    weatherDescr.textContent = (data.weather[0].description);
-    weatherHumidity.textContent = 'Humidity: ' + Math.round(data.main.humidity) +' %';
-    weatherWindSpeed.textContent = 'Wind speed: ' + Math.round(data.wind.speed) + ' m/s';    
 }
 
 
 
 
  // Цитаты 
-let quot__text = document.querySelector('.quot__text');
 
-/* 
+let quotText = document.querySelector('.quot__text');
+let quotAuthor = document.querySelector('.quot__author');
+let updateQuote = document.querySelector('.update__quote');
+let randomNumberQuot = myRandomNum();
+let lengthArrayQuotes;
+
+updateQuote.addEventListener("click", () => {
+    if(randomNumberQuot == 9){
+        randomNumberQuot = 0;
+    } else{
+        randomNumberQuot++;
+    }
+    getQuotes(); 
+})
+
   async function getQuotes() {  
     const quotes = 'data.json';
     const res = await fetch(quotes);
     const data = await res.json(); 
-    console.log(data);
-    quot__text.textContent = data
-  } */
-  //getQuotes(); 
+    quotText.textContent = data[randomNumberQuot].text;
+    quotAuthor.textContent = data[randomNumberQuot].author;
+  } 
+getQuotes(); 
 
-  /* function getQuotes() {
-    const quotes = 'data.json';
-    fetch(quotes)
-      .then(res => res.json())
-      .then(data => { 
-        console.log(data);
-      });
-  }
-  getQuotes();
-
- */
+  function myRandomNum(){
+    let min = 0;
+    let max = 9;
+    let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+} 
+ 
 
 
 
-  // AUDIO 
+// AUDIO 
  
 import playList  from './playList.js';
 

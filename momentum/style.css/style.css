@@ -46,6 +46,7 @@ header, main, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 5px;
 }
 
 .audion__controls{
@@ -93,7 +94,7 @@ header, main, footer {
 }
 
 .play__item--activ{
-    color: blueviolet;
+    color: rgb(209, 133, 33);
 }
 /* .weather{
     max-width: 200px;
@@ -144,6 +145,10 @@ header, main, footer {
 
 .weather__humidity{
     margin: 10px 0;
+}
+
+.weather__display-none{
+   display: none; 
 }
 
 /*Main */
@@ -227,4 +232,45 @@ path{
     fill: #fff;
 }
 
+/* QUOTES */
+
+.quot{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.update__quote{
+    background: no-repeat transparent;
+    border: none;
+    opacity: 0.9;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.update__quote:hover{
+    opacity: 1;
+}
+
+.update__quote > svg { 
+    width: 30px;
+    height: 30px;
+}
+
+.quot__text, .quot__author{
+    color: #fff;
+    text-align: center;
+}
+
+.quot__text{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.quot__author{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
