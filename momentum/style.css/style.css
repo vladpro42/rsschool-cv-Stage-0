@@ -46,11 +46,75 @@ header, main, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 5px;
 }
 
-/* .weather{
-    max-width: 200px;
-} */
+.audion__controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player__icon{
+    background: transparent no-repeat center center;
+    border:  none;
+  
+}
+
+.prev > svg, .next > svg{
+    width: 40px;
+    height: 40px;
+}
+
+.next{
+    transform: scale(-1, 1);
+    /* transform: rotate(180deg); */
+    /* transform: perspective(180); */
+}
+.play {
+    background: url('../images/play.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
+.pause {
+    background: url('../images/pause.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
+.play__item{
+    margin-top: 10px;
+}
+
+.play__item{
+    color: #fff;
+}
+
+.play__item--activ{
+    color: rgb(209, 133, 33);
+}
+
+.language__box{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 25px;
+}
+
+.language__btn{
+    background: transparent no-repeat;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+ .weather{
+    max-width: 240px;
+} 
 
 .weather__city-input{
     background: inherit;
@@ -97,6 +161,10 @@ header, main, footer {
 
 .weather__humidity{
     margin: 10px 0;
+}
+
+.weather__display-none{
+   display: none; 
 }
 
 /*Main */
@@ -164,7 +232,7 @@ main{
     border: none;
     background: inherit;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 50%;
 }
 
@@ -180,4 +248,45 @@ path{
     fill: #fff;
 }
 
+/* QUOTES */
+
+.quot{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.update__quote{
+    background: no-repeat transparent;
+    border: none;
+    opacity: 0.9;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.update__quote:hover{
+    opacity: 1;
+}
+
+.update__quote > svg { 
+    width: 30px;
+    height: 30px;
+}
+
+.quot__text, .quot__author{
+    color: #fff;
+    text-align: center;
+}
+
+.quot__text{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.quot__author{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 

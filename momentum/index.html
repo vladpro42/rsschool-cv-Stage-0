@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Momentum</title>
     <link rel="stylesheet" href="style.css/owfont-regular.css" type="text/css">
     <link rel="stylesheet" href="style.css/style.css">
         
@@ -13,7 +13,26 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <div class="audio__palyer"></div>
+                <div class="audion__player">
+                    <div class="audion__controls">
+                        <button class="prev player__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 64 64">
+                                    <title>backward</title>
+                                    <path fill="#fff" d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"/>
+                                </svg>
+                        </button>
+                        <button class="play player__icon"></button>
+                        <button class="next player__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 64 64">
+                                <title>backward</title>
+                                <path fill="#fff" d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="play__list">
+
+                    </ul>
+                </div>
                 <div class="weather">
                     <div class="weather__city">
                         <input class="weather__city-input" type="text" placeholder="Enter sity" value="Minsk">
@@ -50,10 +69,29 @@
                         <input type="text" class="name"  placeholder="Enter name">
                     </div>
                 </div>
+                <div class="quot">
+                    <button class="update__quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 64 64">
+                            <title>loop2</title>
+                            <path fill="#fff" d="M55.605 10.395c-5.851-6.388-14.26-10.395-23.605-10.395-17.673 0-32 14.327-32 32h6c0-14.359 11.641-26 26-26 7.689 0 14.596 3.339 19.356 8.644l-9.356 9.356h22v-22l-8.395 8.395z"/>
+                            <path fill="#fff" d="M58 32c0 14.359-11.641 26-26 26-7.689 0-14.596-3.339-19.356-8.644l9.356-9.356h-22v22l8.395-8.395c5.851 6.389 14.26 10.395 23.605 10.395 17.673 0 32-14.327 32-32h-6z"/>
+                        </svg>
+                    </button>
+                    <div class="quot__text"></div>
+                    <div class="quot__author"></div>
+                </div>
             </div>
         </div>
     </main>
-    <footer class="footer"></footer>
-    <script type="text/javascript" src="main.js"></script>
+    <footer class="footer">
+        <div class="language__box">
+            <button class="language__btn">RU</button>
+        </div>
+    </footer>
+    
+    <script type="module" src="js/main.js"></script>
+    <script  src="./js/playList.js"></script>
+    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+   
 </body>
 </html>
