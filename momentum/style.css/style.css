@@ -1,0 +1,292 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 500ms linear;
+}
+
+body::before{
+    content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 2;
+}
+
+.container{
+    max-width: 1460px;
+    padding:  0 10px;
+    margin: 0 auto;
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 3;
+}
+
+/* HEADER */ 
+
+
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.audion__controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player__icon{
+    background: transparent no-repeat center center;
+    border:  none;
+  
+}
+
+.prev > svg, .next > svg{
+    width: 40px;
+    height: 40px;
+}
+
+.next{
+    transform: scale(-1, 1);
+    /* transform: rotate(180deg); */
+    /* transform: perspective(180); */
+}
+.play {
+    background: url('../images/play.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
+.pause {
+    background: url('../images/pause.svg') no-repeat;
+    width: 64px;
+    height: 64px;
+    transition: background 0.3s linear;
+}
+
+.play__item{
+    margin-top: 10px;
+}
+
+.play__item{
+    color: #fff;
+}
+
+.play__item--activ{
+    color: rgb(209, 133, 33);
+}
+
+.language__box{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 25px;
+}
+
+.language__btn{
+    background: transparent no-repeat;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+ .weather{
+    max-width: 240px;
+} 
+
+.weather__city-input{
+    background: inherit;
+}
+
+.owf-804:before, .owf-804-d:before, .owf-804-n:before {
+    content: "\ED84";
+    color: #fff;
+}
+
+.weather-icon{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.weather__city{
+    position: relative;
+}
+
+.weather__city::after{
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.weather__city-input{
+    width: 200px;
+    height: 40px;
+    border:  none;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.weather__temperature, .weather__descr, .weather__humidity, .weather__wind-speed{
+    color: #fff;
+    font-size: 16px;
+}
+
+.weather__humidity{
+    margin: 10px 0;
+}
+
+.weather__display-none{
+   display: none; 
+}
+
+/*Main */
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.time{
+    min-height: 124px;
+    margin-bottom: 10px;
+    font-family: 'Arial-MT';
+    font-size: 100px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.date{
+    min-height: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hello__text-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.hello__text {
+    text-align: center;
+    min-height: 48px;
+    font-size: 40px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.name{
+    flex: 1 1 0%;
+    max-width: 30%;
+    padding: 10px;
+    font-size: 40px;
+    text-align: left;
+    color: pink;
+    background-color: transparent;
+    outline: 0px;
+    border-radius: 15px;
+}
+
+.slide__prev, .slide__next{
+    border: none;
+    background: inherit;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+}
+
+.slide__prev{
+    left:  25px;
+}
+
+.slide__next{
+    right: 25px;
+}
+
+path{
+    fill: #fff;
+}
+
+/* QUOTES */
+
+.quot{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.update__quote{
+    background: no-repeat transparent;
+    border: none;
+    opacity: 0.9;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.update__quote:hover{
+    opacity: 1;
+}
+
+.update__quote > svg { 
+    width: 30px;
+    height: 30px;
+}
+
+.quot__text, .quot__author{
+    color: #fff;
+    text-align: center;
+}
+
+.quot__text{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.quot__author{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
