@@ -216,10 +216,6 @@ let weatherCityInput = document.querySelector('.weather__city-input');
 const weatherHumidity = document.querySelector('.weather__humidity');
 const weatherWindSpeed = document.querySelector('.weather__wind-speed');
 
-
-
-getWeather(weatherCityInput.value);
-
 window.addEventListener('beforeunload', () => {
     localStorage.setItem('cityWeather', weatherCityInput.value);
 
@@ -228,9 +224,10 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
     if(localStorage.getItem('cityWeather')) {
         weatherCityInput.value = localStorage.getItem('cityWeather');
-
+        getWeather(weatherCityInput.value);
     }
 });
+
 
 
 weatherCityInput.addEventListener('change', () => {
@@ -241,13 +238,18 @@ async function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${langWeather}&appid=9d1e97713e971f63ff903c8ed34916b9&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log( data )
     if( data.name === undefined /* data.message === 'city not found' */ ) {
         weatherIcon.classList.add('weather__display-none');
         weatherTemperature.classList.add('weather__display-none');
-        weatherDescr.textContent = 'Вы ввели не';
-        weatherHumidity.textContent = 'существующий город';
         weatherWindSpeed.classList.add('weather__display-none');
+        if( languageBtn.textContent == 'RU' ) {
+            weatherDescr.textContent = 'Вы ввели не';
+            weatherHumidity.textContent = 'существующий город';
+        } else if ( languageBtn.textContent == 'EN' ) {
+            weatherDescr.textContent = 'You input is not ';
+            weatherHumidity.textContent = 'existent city ';
+        }
+        
     } else {
         weatherIcon.classList.remove('weather__display-none');
         weatherTemperature.classList.remove('weather__display-none');
@@ -308,7 +310,6 @@ updateQuote.addEventListener("click", () => {
   return Math.floor(rand);
 } 
  
-
 
 
 // AUDIO 
